@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shiyo/utils/colors/app_common_color.dart';
-import 'package:shiyo/view/ui/screen/sign_in_screen/sign_in_screen.dart';
+import 'package:shiyo/view/ui/screen/language_select_screen/language_select_screen.dart';
 import 'package:shiyo/view/ui/widgets/elevated_button.dart';
 
 import '../../widgets/text_form_field.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +16,18 @@ class SignUpScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(
-                height: 100,
+                height: 120,
+              ),
+              const Text(
+                'Welcome Back!',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 18, fontWeight: FontWeight.w700, wordSpacing: 1),
+              ),
+              const SizedBox(
+                height: 50,
               ),
               Center(
                 child: Image.asset(
@@ -30,62 +38,52 @@ class SignUpScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 5,
-              ),
-              const Text(
-                'Welcome Onboard!',
-                style: TextStyle(
-                    fontSize: 18, fontWeight: FontWeight.w700, wordSpacing: 1),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              const Text(
-                'Let’s help you make payments hassle free.',
-                style: TextStyle(fontSize: 12),
-              ),
-              const SizedBox(
                 height: 40,
               ),
               const AppTextFormField(
-                hintText: 'Enter your full name',
+                hintText: 'Enter your email',
               ),
               const SizedBox(
                 height: 15,
               ),
-              const AppTextFormField(
-                hintText: 'Enter your mobile number',
-                keyBoardType: TextInputType.phone,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const AppTextFormField(
+                    hintText: 'Confirm password',
+                    isHideText: true,
+                    keyBoardType: TextInputType.visiblePassword,
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  InkWell(
+                    onTap: (){
+                      //TODO: implement will latter
+                    },
+                    child: Text(
+                      "Forgot Password?",
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.primaryColor,
+                      ),
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(
-                height: 15,
-              ),
-              const AppTextFormField(
-                hintText: 'Create password',
-                isHideText: true,
-                keyBoardType: TextInputType.visiblePassword,
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              const AppTextFormField(
-                hintText: 'Confirm password',
-                isHideText: true,
-                keyBoardType: TextInputType.visiblePassword,
-
-              ),
-              const SizedBox(
-                height: 30,
+                height: 90,
               ),
               AppElevatedButton(
-                buttonText: "Register",
+                buttonText: "Sign In",
                 onPressed: () {
                   //TODO: implement will latter
-
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const SignInScreen()));
+                          builder: (context) => const LanguageSelectScreen()));
                 },
               ),
               const SizedBox(
@@ -94,7 +92,7 @@ class SignUpScreen extends StatelessWidget {
               Wrap(
                 children: [
                   const Text(
-                    "Already have an account?",
+                    "Create new account?",
                     style: TextStyle(
                         fontSize: 12,
                         color: Colors.black,
@@ -103,12 +101,11 @@ class SignUpScreen extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       //TODO: implement will latter
-
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 2.0),
                       child: Text(
-                        'Sign In',
+                        'Sign Up',
                         style: TextStyle(
                             color: AppColors.primaryColor,
                             fontSize: 12,

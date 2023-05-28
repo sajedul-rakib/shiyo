@@ -6,11 +6,11 @@ import '../../../utils/colors/app_common_color.dart';
 
 class AppElevatedButton extends StatelessWidget {
   const AppElevatedButton({
-    super.key,required this.buttonText, this.onPressed,
+    super.key,required this.buttonText, required this.onPressed,
   });
 
   final String buttonText;
-  final VoidCallback? onPressed;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
