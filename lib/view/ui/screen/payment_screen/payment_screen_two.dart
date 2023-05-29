@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shiyo/utils/colors/app_common_color.dart';
 import 'package:shiyo/view/ui/widgets/payment_text_form_field.dart';
 
-import '../../widgets/background_screen.dart';
+import '../../widgets/background_screen/background_screen.dart';
+import '../../widgets/botom_nav_bar.dart';
 
 class PaymentScreenTwo extends StatelessWidget {
   const PaymentScreenTwo({Key? key}) : super(key: key);
@@ -14,34 +15,7 @@ class PaymentScreenTwo extends StatelessWidget {
         backgroundColor: AppColors.primaryColor.withOpacity(.42),
         iconTheme: const IconThemeData(color: Colors.white),
       ),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      // floatingActionButton: Container(
-      //   width: 160,
-      //   height: 160,
-      //   decoration: BoxDecoration(
-      //       color: AppColors.bottomBarBackgroundColor, shape: BoxShape.circle),
-      //   child: Image.asset(
-      //     'assets/images/shiyo_logo.png',
-      //     width: 65,
-      //     height: 75,
-      //     fit: BoxFit.contain,
-      //   ),
-      // ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   currentIndex: 1,
-      //   items: [
-      //     const BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-      //     BottomNavigationBarItem(
-      //         icon: Image.asset(
-      //           'assets/images/atm_scan.png',
-      //           width: 40,
-      //           height: 40,
-      //         ),
-      //         label: "Scan"),
-      //     const BottomNavigationBarItem(
-      //         icon: Icon(Icons.punch_clock_outlined), label: "Verify "),
-      //   ],
-      // ),
+     bottomNavigationBar: const BottomNavBarScreen(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(

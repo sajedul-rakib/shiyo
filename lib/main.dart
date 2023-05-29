@@ -23,7 +23,7 @@ class Shiyo extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  const SwipeSuccessfulScreen(),
+      home:  const SplashScreen(),
       theme: ThemeData(
         fontFamily:GoogleFonts.poppins().fontFamily,
         appBarTheme: const AppBarTheme(
@@ -36,7 +36,7 @@ class Shiyo extends StatelessWidget {
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           elevation: 0,
-          backgroundColor: AppColors.bottomBarBackgroundColor,
+          backgroundColor: AppColors.bottomNavBarBackgroundColor,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           selectedIconTheme:  IconThemeData(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../utils/colors/app_common_color.dart';
+import '../../../../utils/colors/app_common_color.dart';
 
 
 class BackgroundScreen extends StatelessWidget {
@@ -12,7 +12,7 @@ class BackgroundScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: 290,
+      height: 320,
       color: AppColors.primaryColor.withOpacity(.42),
       child: Column(
         children: [
@@ -41,7 +41,7 @@ class BackgroundScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 30,
+            height: 20,
           ),
           Expanded(
               child: child)

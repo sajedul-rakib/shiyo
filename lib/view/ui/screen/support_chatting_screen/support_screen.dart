@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shiyo/utils/colors/app_common_color.dart';
-import 'package:shiyo/view/ui/widgets/background_screen.dart';
+import 'package:shiyo/view/ui/widgets/background_screen/background_screen.dart';
 
 class SupportScreen extends StatelessWidget {
   SupportScreen({Key? key}) : super(key: key);

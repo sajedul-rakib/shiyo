@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shiyo/utils/colors/app_common_color.dart';
-import 'package:shiyo/view/ui/widgets/background_screen.dart';
+import 'package:shiyo/view/ui/widgets/background_screen/background_screen.dart';
 
 class InstructionScreen extends StatelessWidget {
   const InstructionScreen({Key? key}) : super(key: key);

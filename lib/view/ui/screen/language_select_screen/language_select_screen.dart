@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shiyo/utils/colors/app_common_color.dart';
-import 'package:shiyo/view/ui/screen/payment_screen/payment_screen_one.dart';
+import 'package:shiyo/view/ui/widgets/botom_nav_bar.dart';
+import '../dashboard_screen/dashboard_home_light.dart';
 
 class LanguageSelectScreen extends StatelessWidget {
   const LanguageSelectScreen({Key? key}) : super(key: key);
@@ -45,13 +46,19 @@ class LanguageSelectScreen extends StatelessWidget {
           InkWell(
             onTap: () {
               //TODO: implement will latter
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const BottomNavBarScreen()));
             },
             child: Container(
               width: 250,
               height: 60,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  border: Border.all(width: 1, color: Colors.grey)),
+                borderRadius: BorderRadius.circular(5),
+                border: Border.all(width: 1, color: Colors.grey),
+                color: AppColors.primaryColor,
+              ),
               child: const Center(
                   child: Text(
                 "English/Us",
@@ -65,13 +72,11 @@ class LanguageSelectScreen extends StatelessWidget {
           InkWell(
             onTap: () {
               //TODO: implement will latter
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>const PaymentScreenOne()));
             },
             child: Container(
               width: 250,
               height: 60,
               decoration: BoxDecoration(
-                  color: AppColors.primaryColor,
                   borderRadius: BorderRadius.circular(5),
                   border: Border.all(width: 1, color: Colors.grey)),
               child: const Center(
