@@ -23,30 +23,28 @@ class ServiceCart extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: SizedBox(
-        width: 140,
-        height: 140,
+        width: 125,
+        height: 125,
         child: InkWell(
           onTap: onPressed,
           child: Card(
             color: backgroundColor,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30)
+              borderRadius: BorderRadius.circular(20)
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: Column(
-                children: [
-                  Center(
-                    child: iconImageOrIcon
+            child: Column(
+              children: [
+                Center(
+                  child: iconImageOrIcon
+                ),
+                Text(
+                  serviceName!,
+                  textAlign: TextAlign.center,
+                  style:  TextStyle(
+                    color: textColor,
                   ),
-                  Text(
-                    serviceName!,
-                    style:  TextStyle(
-                      color: textColor,
-                    ),
-                  )
-                ],
-              ),
+                )
+              ],
             ),
           ),
         ),

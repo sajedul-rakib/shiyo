@@ -1,8 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:shiyo/utils/colors/app_common_color.dart';
+import 'package:shiyo/view/ui/screen/connect_device_screen/device_not_connet_screen.dart';
 import 'package:shiyo/view/ui/screen/dashboard_screen/dashboard_home_light.dart';
+import 'package:shiyo/view/ui/screen/history_screen/history_screen.dart';
 
 class BottomNavBarScreen extends StatefulWidget {
   const BottomNavBarScreen({super.key});
@@ -10,29 +11,32 @@ class BottomNavBarScreen extends StatefulWidget {
   @override
   State<BottomNavBarScreen> createState() => _BottomNavBarScreenState();
 }
-
+//
+// final List<Widget> _screens=[
+//   const DashboardLightScreen(),
+//   const DeviceNotConnectScreen(),
+//   const HistoryScreen()
+// ];
+// int _currentScreenIndex = 0;
 class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
-  int pageState = 0;
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: IndexedStack(
-        index: pageState,
-        children: const [
-          DashboardLightScreen()
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
+    // return Scaffold(
+      // body: _screens[_currentScreenIndex],
+     // bottomNavigationBar:
+      return BottomNavigationBar(
         backgroundColor: AppColors.bottomNavBarBackgroundColor,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedItemColor: AppColors.primaryColor,
-        currentIndex: pageState,
-        onTap: (value) {
-          setState(() {
-            pageState = value;
-          });
-        },
+        // currentIndex: _currentScreenIndex,
+        // onTap: (value) {
+        //   _currentScreenIndex = value;
+        //   setState(() {
+        //
+        //   });
+        // },
         items: [
           BottomNavigationBarItem(
               icon: Icon(
@@ -56,7 +60,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
             label: "History",
           ),
         ],
-      ),
+      // ),
     );
   }
 }

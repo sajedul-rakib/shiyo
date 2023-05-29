@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import '../../../../utils/colors/app_common_color.dart';
 
-
-class BackgroundScreen extends StatelessWidget {
-  const BackgroundScreen({
-    super.key, required this.child,
+class BackgroundScreenWithDeviceImage extends StatelessWidget {
+  const BackgroundScreenWithDeviceImage({
+    super.key,
+    required this.child,
   });
+
   final Widget child;
 
   @override
@@ -42,10 +43,20 @@ class BackgroundScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
             ],
+          ),
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        Positioned(
+          top: -50,
+
+          child: Image.asset(
+            'assets/images/pos_machine.png',
+            width: 400,
+            height: 400,
+            fit: BoxFit.cover,
           ),
         ),
         child

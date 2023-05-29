@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shiyo/utils/colors/app_common_color.dart';
-import 'package:shiyo/view/ui/widgets/botom_nav_bar.dart';
+import 'package:shiyo/view/ui/widgets/bottom_nav_bar.dart';
 import '../dashboard_screen/dashboard_home_light.dart';
 
 class LanguageSelectScreen extends StatelessWidget {
@@ -49,7 +49,7 @@ class LanguageSelectScreen extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const BottomNavBarScreen()));
+                      builder: (context) => const DashboardLightScreen()));
             },
             child: Container(
               width: 250,

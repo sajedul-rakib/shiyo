@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shiyo/utils/colors/app_common_color.dart';
+import 'package:shiyo/view/ui/screen/swipe_card_screen/swipe_card_screen_one.dart';
+import 'package:shiyo/view/ui/screen/swipe_card_screen/swipe_successful_screen.dart';
 import 'package:shiyo/view/ui/widgets/elevated_button.dart';
 import 'package:shiyo/view/ui/widgets/payment_text_form_field.dart';
 
 import '../../widgets/background_screen/background_screen.dart';
-import '../../widgets/botom_nav_bar.dart';
+import '../../widgets/bottom_nav_bar.dart';
 
 class PaymentScreenOne extends StatelessWidget {
   const PaymentScreenOne({Key? key}) : super(key: key);
@@ -30,7 +32,7 @@ class PaymentScreenOne extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                       Positioned(
-                        top:160,
+                        top:250,
                         left: 190,
                         child: Container(
                           width: 10,
@@ -43,9 +45,6 @@ class PaymentScreenOne extends StatelessWidget {
                       )
                     ]
                 ),
-              ),
-              const SizedBox(
-                height: 40,
               ),
               Text(
                 "Device is connected Successfully",
@@ -60,9 +59,7 @@ class PaymentScreenOne extends StatelessWidget {
                 style:
                 TextStyle(fontSize: 14, color: AppColors.successTextColor),
               ),
-              const SizedBox(
-                height: 40,
-              ),
+             const SizedBox(height: 20,),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.0),
                 child: Column(
@@ -95,6 +92,11 @@ class PaymentScreenOne extends StatelessWidget {
                     buttonText: "Charge",
                     onPressed: () {
                       //TODO:Implements will letter
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                              const SwipeCardScreenOne()));
                     }),
               )
             ],

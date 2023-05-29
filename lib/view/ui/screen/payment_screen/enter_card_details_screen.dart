@@ -3,7 +3,7 @@ import 'package:shiyo/utils/colors/app_common_color.dart';
 import 'package:shiyo/view/ui/widgets/payment_text_form_field.dart';
 
 import '../../widgets/background_screen/background_screen.dart';
-import '../../widgets/botom_nav_bar.dart';
+import '../../widgets/bottom_nav_bar.dart';
 
 class EntairCardDetailScreen extends StatelessWidget {
   const EntairCardDetailScreen({Key? key}) : super(key: key);
@@ -29,7 +29,7 @@ class EntairCardDetailScreen extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                   Positioned(
-                    top: 160,
+                    top: 250,
                     left: 190,
                     child: Container(
                       width: 10,
@@ -39,15 +39,13 @@ class EntairCardDetailScreen extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                      top: 60,
+                    left: -60,
+                      top: 50,
                       child: Image.asset(
                         'assets/images/atm_card.png',
-                        width: 150,
+                        width: 300,
                       ))
                 ]),
-              ),
-              const SizedBox(
-                height: 40,
               ),
               Text(
                 "Device is connected Successfully",
@@ -62,9 +60,7 @@ class EntairCardDetailScreen extends StatelessWidget {
                 style:
                     TextStyle(fontSize: 14, color: AppColors.successTextColor),
               ),
-              const SizedBox(
-                height: 40,
-              ),
+
               const Padding(
                 padding: EdgeInsets.all(24.0),
                 child: Column(

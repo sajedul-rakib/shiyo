@@ -3,7 +3,7 @@ import 'package:shiyo/utils/colors/app_common_color.dart';
 import 'package:shiyo/view/ui/widgets/payment_text_form_field.dart';
 
 import '../../widgets/background_screen/background_screen.dart';
-import '../../widgets/botom_nav_bar.dart';
+import '../../widgets/bottom_nav_bar.dart';
 
 class PaymentScreenTwo extends StatelessWidget {
   const PaymentScreenTwo({Key? key}) : super(key: key);
@@ -22,6 +22,7 @@ class PaymentScreenTwo extends StatelessWidget {
             children: [
                BackgroundScreen(
                 child: Column(children: [
+                  const SizedBox(height: 60,),
                   Text("Please enter Amount",style: TextStyle(
                     fontSize: 14,
                     color: AppColors.successTextColor

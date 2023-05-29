@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shiyo/view/ui/screen/dashboard_screen/dashboard_home_dark.dart';
-import 'package:shiyo/view/ui/screen/dashboard_screen/dashboard_send_monay.dart';
+import 'package:shiyo/view/ui/screen/connect_device_screen/device_not_connet_screen.dart';
+import 'package:shiyo/view/ui/screen/history_screen/history_screen.dart';
+import 'package:shiyo/view/ui/screen/instruction_screen/instruction_screen.dart';
+import 'package:shiyo/view/ui/screen/support_chatting_screen/support_screen.dart';
 
 import '../../../../utils/colors/app_common_color.dart';
 import '../../../../utils/colors/colors.dart';
 import '../../widgets/background_screen/background_screen.dart';
+import '../../widgets/bottom_nav_bar.dart';
 import '../../widgets/service_cart.dart';
-import '../../widgets/shipy_widgets.dart';
+import '../../widgets/custom_floating_action_button.dart';
 
 class DashboardLightScreen extends StatelessWidget {
   const DashboardLightScreen({super.key});
@@ -18,12 +21,10 @@ final Color iconColor=const Color(0xffFFFFFF);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.primaryColor.withOpacity(.42),
-        leading: const Icon(
-          Icons.logout,
-          color: Colors.white,
-        ),
+          leading:  InkWell(onTap:(){},child: Image.asset('assets/images/logout.png'))
       ),
-      floatingActionButton: const ShipyWidgetsPage(),
+      floatingActionButton: const CustomFloatingActionButton(),
+      bottomNavigationBar: const BottomNavBarScreen(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: Stack(
         children: [
@@ -33,6 +34,7 @@ final Color iconColor=const Color(0xffFFFFFF);
               BackgroundScreen(
                   child: Column(
                 children: [
+                  const SizedBox(height: 40,),
                   const Text(
                     "Total Transaction",
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
@@ -135,7 +137,7 @@ final Color iconColor=const Color(0xffFFFFFF);
                 children: [
                   Center(
                     child: SizedBox(
-                      width: 320,
+                      width: 300,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -143,12 +145,12 @@ final Color iconColor=const Color(0xffFFFFFF);
                             textColor:Colors.white,
                             iconImageOrIcon: Image.asset(
                               'assets/images/slogo.png',
-                              width: 100,
-                              height: 100,
+                              width: 80,
+                              height: 80,
                               color: iconColor,
                               fit: BoxFit.cover,
                             ),
-                            serviceName: 'Swipe',
+                            serviceName: 'Pay',
                             backgroundColor: AppColors.primaryColor,
                             onPressed: () {
                               //TODO:Implement will letter
@@ -156,7 +158,7 @@ final Color iconColor=const Color(0xffFFFFFF);
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          const DashboardDarkScreen()));
+                                          const DeviceNotConnectScreen()));
                             },
                           ),
                           ServiceCart(
@@ -167,12 +169,12 @@ final Color iconColor=const Color(0xffFFFFFF);
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                      const DashboardMonayScreen()));
+                                      const HistoryScreen()));
                             },
                             iconImageOrIcon: Image.asset(
                               'assets/images/verifying.png',
-                              width: 100,
-                              height: 100,
+                              width: 80,
+                              height: 80,
                               color: iconColor,
                               fit: BoxFit.cover,
                             ),
@@ -188,28 +190,42 @@ final Color iconColor=const Color(0xffFFFFFF);
                   ),
                   Center(
                     child: SizedBox(
-                      width: 320,
+                      width: 300,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           ServiceCart(
+                            onPressed: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                       SupportScreen()));
+                            },
                             textColor: iconColor,
                             iconImageOrIcon: Image.asset(
                               'assets/images/support.png',
-                              width: 100,
-                              height: 100,
+                              width: 70,
+                              height: 70,
                               fit:BoxFit.cover,
                               color: iconColor,
                             ),
-                            serviceName: 'Support',
+                            serviceName: 'Support\n24/7',
                             backgroundColor: AppColors.primaryColor,
                           ),
                           ServiceCart(
+                            onPressed: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                      const InstructionScreen()));
+                            },
                             textColor: iconColor,
                             iconImageOrIcon: Image.asset(
                               'assets/images/tran.png',
-                              width: 100,
-                              height: 100,
+                              width: 80,
+                              height: 80,
                               fit: BoxFit.cover,
                               color: iconColor,
                             ),

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../utils/colors/app_common_color.dart';
 
 
-class ShipyWidgetsPage extends StatelessWidget {
-  const ShipyWidgetsPage({super.key});
+class CustomFloatingActionButton extends StatelessWidget {
+  const CustomFloatingActionButton({super.key});
 
   @override
   Widget build(BuildContext context) {

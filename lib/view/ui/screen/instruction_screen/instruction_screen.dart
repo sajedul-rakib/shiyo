@@ -10,23 +10,25 @@ class InstructionScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.primaryColor.withOpacity(.42),
-        iconTheme: const IconThemeData(
-          color: Colors.white
-        ),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: const SafeArea(
-        child: Column(
+        child: BackgroundScreen(
+            child: Column(
           children: [
-            BackgroundScreen(
-                child: Center(
+            SizedBox(
+              height: 150,
+            ),
+            Center(
               child: Text(
                 "Instructions & Reference Videos ",
+                textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 20, color: Colors.white, wordSpacing: 1.5),
               ),
-            ))
+            ),
           ],
-        ),
+        )),
       ),
     );
   }

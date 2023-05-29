@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:shiyo/utils/colors/app_common_color.dart';
+import 'package:shiyo/view/ui/screen/connect_device_screen/connect_device_screen.dart';
+import 'package:shiyo/view/ui/screen/connect_device_screen/device_not_connet_screen.dart';
 import 'package:shiyo/view/ui/screen/history_screen/history_screen.dart';
 import 'package:shiyo/view/ui/screen/instruction_screen/instruction_screen.dart';
 import 'package:shiyo/view/ui/screen/payment_screen/enter_card_details_screen.dart';
 import 'package:shiyo/view/ui/screen/payment_screen/payment_screen_one.dart';
 import 'package:shiyo/view/ui/screen/payment_screen/payment_screen_two.dart';
+import 'package:shiyo/view/ui/screen/payment_verifying_screen/payment_verification_two.dart';
+import 'package:shiyo/view/ui/screen/payment_verifying_screen/payment_verifying_screen.dart';
 import 'package:shiyo/view/ui/screen/splash_screen/splash_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shiyo/view/ui/screen/support_chatting_screen/support_screen.dart';
 import 'package:shiyo/view/ui/screen/swipe_card_screen/swipe_card_screen_one.dart';
 import 'package:shiyo/view/ui/screen/swipe_card_screen/swipe_successful_screen.dart';
+import 'package:shiyo/view/ui/screen/transaction_successful_screen/transaction_successful_screen.dart';
 
 void main(){
   runApp(const Shiyo());
@@ -23,7 +28,7 @@ class Shiyo extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  const SplashScreen(),
+      home:   const SplashScreen(),
       theme: ThemeData(
         fontFamily:GoogleFonts.poppins().fontFamily,
         appBarTheme: const AppBarTheme(
