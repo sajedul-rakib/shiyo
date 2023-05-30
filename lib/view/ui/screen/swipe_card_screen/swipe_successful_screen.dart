@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shiyo/utils/colors/app_common_color.dart';
-import 'package:shiyo/view/ui/screen/payment_verifying_screen/payment_verifying_screen.dart';
 import 'package:shiyo/view/ui/widgets/elevated_button.dart';
 import 'package:shiyo/view/ui/widgets/payment_text_form_field.dart';
 
@@ -112,7 +111,7 @@ class SwipeSuccessfulScreen extends StatelessWidget {
                   ],
                 ),
               ),
-
+              const SizedBox(height: 30,)
             ],
           ),
         ),

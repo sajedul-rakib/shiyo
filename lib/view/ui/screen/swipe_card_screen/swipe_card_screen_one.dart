@@ -129,7 +129,8 @@ class _SwipeCardScreenOneState extends State<SwipeCardScreenOne> {
                     ),
                   ),
                 ],
-              )
+              ),
+              const SizedBox(height: 30,)
             ]),
           ),
         ),
