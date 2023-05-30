@@ -16,7 +16,7 @@ class HistoryScreen extends StatelessWidget {
         backgroundColor: AppColors.primaryColor.withOpacity(.42),
         iconTheme: const IconThemeData(color: Colors.white),
       ),
-      // bottomNavigationBar: const BottomNavBarScreen(),
+      bottomNavigationBar: const BottomNavBarScreen(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: const CustomFloatingActionButton(),
       body: SafeArea(

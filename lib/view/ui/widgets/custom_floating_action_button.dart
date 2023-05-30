@@ -10,7 +10,7 @@ class CustomFloatingActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 100,
-      height: 50,
+      height: 60,
       decoration: BoxDecoration(
         color: AppColors.primaryColor.withOpacity(0.4),
         borderRadius: const BorderRadius.only(
@@ -18,12 +18,17 @@ class CustomFloatingActionButton extends StatelessWidget {
           topRight: Radius.circular(100),
         ),
       ),
-      child: Center(
-        child: Image.asset(
-          "assets/images/shiyo_logo.png",
-          width: 100,
-          height: 40,
-          fit: BoxFit.contain,
+      child: InkWell(
+        onTap: (){},
+        highlightColor: Colors.transparent,
+        splashColor: Colors.transparent,
+        child: Center(
+          child: Image.asset(
+            "assets/images/shiyo_logo.png",
+            // width: 100,
+            // height: 40,
+            fit: BoxFit.contain,
+          ),
         ),
       ),
     );

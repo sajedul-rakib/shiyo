@@ -11,56 +11,48 @@ class BottomNavBarScreen extends StatefulWidget {
   @override
   State<BottomNavBarScreen> createState() => _BottomNavBarScreenState();
 }
-//
-// final List<Widget> _screens=[
-//   const DashboardLightScreen(),
-//   const DeviceNotConnectScreen(),
-//   const HistoryScreen()
-// ];
-// int _currentScreenIndex = 0;
-class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
 
+const Color iconColor=Color(0xffA6A6A6);
+
+class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   @override
   Widget build(BuildContext context) {
-    // return Scaffold(
-      // body: _screens[_currentScreenIndex],
-     // bottomNavigationBar:
-      return BottomNavigationBar(
-        backgroundColor: AppColors.bottomNavBarBackgroundColor,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        selectedItemColor: AppColors.primaryColor,
-        // currentIndex: _currentScreenIndex,
-        // onTap: (value) {
-        //   _currentScreenIndex = value;
-        //   setState(() {
-        //
-        //   });
-        // },
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-                color: AppColors.primaryColor,
-                size: 30,
-              ),
-              label: "Home"),
-          BottomNavigationBarItem(
-            icon: Image.asset(
-              "assets/images/pay.png",
-              color: Colors.black.withOpacity(.50),
-              height: 30,
-              width: 30,
-              fit: BoxFit.cover,
-            ),
-            label: "Pay",
+    return BottomAppBar(
+        color: AppColors.bottomNavBarBackgroundColor,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 18.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const DashboardLightScreen()));
+                  },
+                  icon:  const Icon(Icons.home,color: iconColor,)),
+              InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const DeviceNotConnectScreen()));
+                  },
+                  child: Image.asset('assets/images/pay.png')),
+              IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HistoryScreen()));
+                  },
+                  icon: Image.asset('assets/images/verifying.png',color: iconColor,)),
+            ],
+            // ),
           ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/verifying.png'),
-            label: "History",
-          ),
-        ],
-      // ),
-    );
+        ));
   }
 }

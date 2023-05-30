@@ -17,34 +17,32 @@ class DeviceNotConnectScreen extends StatelessWidget {
         backgroundColor: AppColors.primaryColor.withOpacity(.42),
         iconTheme: const IconThemeData(color: Colors.white),
       ),
-      // bottomNavigationBar: const BottomNavBarScreen(),
+      bottomNavigationBar: const BottomNavBarScreen(),
       floatingActionButton: const CustomFloatingActionButton(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: SafeArea(
-        child: SingleChildScrollView(
+        child: BackgroundScreen(
           child: Column(
             children: [
-              BackgroundScreen(
-                child: Stack(children: [
-                  Image.asset(
-                    'assets/images/pos_machine.png',
-                    width: 400,
-                    height: 400,
-                    fit: BoxFit.cover,
+              Stack(children: [
+                Image.asset(
+                  'assets/images/pos_machine.png',
+                  width: 400,
+                  height: 400,
+                  fit: BoxFit.cover,
+                ),
+                Positioned(
+                  top: 250,
+                  left: 190,
+                  child: Container(
+                    width: 10,
+                    height: 10,
+                    decoration: const BoxDecoration(
+                        color: Colors.red, shape: BoxShape.circle),
                   ),
-                  Positioned(
-                    top: 250,
-                    left: 190,
-                    child: Container(
-                      width: 10,
-                      height: 10,
-                      decoration: const BoxDecoration(
-                          color: Colors.red, shape: BoxShape.circle),
-                    ),
-                  ),
-                ]),
-              ),
-               Column(
+                ),
+              ]),
+              Column(
                 children: [
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 40.0),
@@ -55,16 +53,16 @@ class DeviceNotConnectScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 40,),
-                 SizedBox(width: 200,
-                   child: AppElevatedButton(buttonText: 'Connect Now', onPressed: (){
-                     //TODO: Implement will letter
-                     Navigator.push(
-                         context,
-                         MaterialPageRoute(
-                             builder: (context) =>
-                             const ConnectDeviceScreen()));
-                   }),
-                 )
+                  SizedBox(width: 200,
+                    child: AppElevatedButton(buttonText: 'Connect Now', onPressed: (){
+                      //TODO: Implement will letter
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                              const ConnectDeviceScreen()));
+                    }),
+                  )
                 ],
               )
             ],

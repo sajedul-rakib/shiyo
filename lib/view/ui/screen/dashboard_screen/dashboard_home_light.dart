@@ -150,7 +150,7 @@ final Color iconColor=const Color(0xffFFFFFF);
                               color: iconColor,
                               fit: BoxFit.cover,
                             ),
-                            serviceName: 'Pay',
+                            serviceName: 'Swipe',
                             backgroundColor: AppColors.primaryColor,
                             onPressed: () {
                               //TODO:Implement will letter
